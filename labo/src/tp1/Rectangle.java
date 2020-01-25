@@ -20,12 +20,14 @@ public class Rectangle extends BaseShape {
     // TODO appliquer la translation sur la forme.
     @Override
     public Rectangle translate(Point2d point) {
+
         return null;
     }
 
     // TODO appliquer la rotation sur la forme.
     @Override
     public Rectangle rotate(Double angle) {
+
         return null;
     }
 

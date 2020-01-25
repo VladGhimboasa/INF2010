@@ -57,12 +57,12 @@ public final class PointOperator {
     public static Point2d getMaxCoord(Collection<Point2d> coords) {
         double maxX = 0.0;
         double maxY = 0.0;
-        for(Point2d pt : coords){
-            if(maxX < pt.X()){
-                maxX = pt.X();
+        for(Point2d point : coords){
+            if(maxX < point.X()){
+                maxX = point.X();
             }
-            if(maxY < pt.Y()){
-                maxY = pt.Y();
+            if(maxY < point.Y()){
+                maxY = point.Y();
             }
         }
         return new Point2d(maxX, maxY);
@@ -72,12 +72,12 @@ public final class PointOperator {
     public static Point2d getMinCoord(Collection<Point2d> coords) {
         double minX = 0.0;
         double minY = 0.0;
-        for(Point2d pt : coords){
-            if(minX > pt.X()){
-                minX = pt.X();
+        for(Point2d point : coords){
+            if(minX > point.X()){
+                minX = point.X();
             }
-            if(minY > pt.Y()){
-                minY = pt.Y();
+            if(minY > point.Y()){
+                minY = point.Y();
             }
         }
         return new Point2d(minX, minY);

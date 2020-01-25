@@ -10,47 +10,58 @@ public class BaseShape {
 
     // TODO Initialiser les points.
     public BaseShape() {
-        // ...
+        this.coords = new HashSet<Point2d>();
     }
 
     // TODO prendre une liste de points et creer une nouvelle forme.
     public BaseShape(Collection<Point2d> coords) {
-        // ...
+        this.coords = new HashSet<Point2d>();
+        for(Point2d point : coords){
+            this.coords.add(point);
+        }
     }
 
     // TODO ajouter ou retirer des coordonnees a la liste de points.
     public void add(Point2d coord) {
-        // ...
+        coords.add(coord);
     }
     public void add(BaseShape shape) {
-        // ...
+        for(Point2d point : shape.coords){
+            coords.add(point);
+        }
     }
     public void addAll(Collection<Point2d> coords) {
-        // ...
+        this.coords.addAll(coords);
     }
     public void remove(Point2d coord) {
-        // ...
+        coords.remove(coord);
     }
+
     public void remove(BaseShape shape) {
-        // ...
+        for(Point2d point : shape.coords){
+            coords.remove(point);
+        }
     }
     public void removeAll(Collection<Point2d> coords) {
-        // ...
+        coords.clear();
     }
 
     // TODO retourne les coordonnees de la liste.
     public Set<Point2d> getCoords() {
-        return null;
+        return this.coords;
     }
 
     // TODO appliquer la translation sur la forme.
     public BaseShape translate(Point2d point) {
-        return null;
+        for(Point2d points : coords){
+            points.translate(point);
+        }
+        return this;
     }
 
     // TODO appliquer la translation sur la liste.
     public Set<Point2d> translateAll(Point2d point) {
-        return null;
+        return null; // wat
     }
 
     // TODO appliquer la rotation sur la forme.
@@ -65,6 +76,6 @@ public class BaseShape {
 
     // TODO retourner une nouvelle forme.
     public BaseShape clone() {
-        return this;
+        return new BaseShape();
     }
 }
