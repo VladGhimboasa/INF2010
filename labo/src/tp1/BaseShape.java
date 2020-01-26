@@ -23,45 +23,51 @@ public class BaseShape {
 
     // TODO ajouter ou retirer des coordonnees a la liste de points.
     public void add(Point2d coord) {
-        coords.add(coord);
+        this.coords.add(coord);
     }
+
     public void add(BaseShape shape) {
-        for(Point2d point : shape.coords){
-            coords.add(point);
-        }
+        this.coords.addAll(shape.coords);
     }
     public void addAll(Collection<Point2d> coords) {
-        this.coords.addAll(coords);
+        for(Point2d point : coords){
+            this.coords.add(point);
+        }
     }
     public void remove(Point2d coord) {
-        coords.remove(coord);
+        this.coords.remove(coord);
     }
 
     public void remove(BaseShape shape) {
-        for(Point2d point : shape.coords){
-            coords.remove(point);
-        }
+        this.coords.removeAll(shape.coords);
     }
     public void removeAll(Collection<Point2d> coords) {
-        coords.clear();
+        for(Point2d point : coords) {
+            this.coords.remove(point);
+        }
     }
 
     // TODO retourne les coordonnees de la liste.
     public Set<Point2d> getCoords() {
-        return this.coords;
+        return new HashSet<>(this.coords);
     }
 
     // TODO appliquer la translation sur la forme.
     public BaseShape translate(Point2d point) {
+        BaseShape bs = new BaseShape();
         for(Point2d points : coords){
-            points.translate(point);
+            bs.add(points.translate(point));
         }
-        return this;
+        return bs;
     }
 
     // TODO appliquer la translation sur la liste.
     public Set<Point2d> translateAll(Point2d point) {
-        return null; // wat
+        Set<Point2d> set = new HashSet<Point2d>();
+        for(Point2d points : coords) {
+            set.add(points.translate(point));
+        }
+        return set;
     }
 
     // TODO appliquer la rotation sur la forme.

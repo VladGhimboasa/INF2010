@@ -3,12 +3,14 @@ package tp1;
 import java.util.*;
 
 public final class PointOperator {
+
     // TODO appliquer la translation sur le vecteur d'entree.
     public static Double[] translate(Double[] vector, Double[] translateVector) {
-        for(int i = 0; i < vector.length; i++){
-            vector[i] += translateVector[i];
+        Double[] arr = vector.clone();
+        for(int i = 0; i < arr.length; i++){
+            arr[i] += translateVector[i];
         }
-        return vector;
+        return arr;
     }
 
     // TODO appliquer la rotation sur le vecteur d'entree.
@@ -31,26 +33,29 @@ public final class PointOperator {
 
     // TODO appliquer le facteur de division sur le vecteur d'entree.
     public static Double[] divide(Double[] vector, Double divider) {
-        for(int i = 0; i < vector.length; i++){
-            vector[i] = vector[i] / divider;
+        Double[] arr = vector.clone();
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = vector[i] / divider;
         }
-        return vector;
+        return arr;
     }
 
     // TODO appliquer le facteur de multiplication sur le vecteur d'entree.
     public static Double[] multiply(Double[] vector, Double multiplier) {
-        for(int i = 0; i < vector.length; i++){
-            vector[i] = vector[i] * multiplier;
+        Double[] arr = vector.clone();
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = vector[i] * multiplier;
         }
-        return vector;
+        return arr;
     }
 
     // TODO appliquer le facteur d'addition sur le vecteur d'entree.
     public static Double[] add(Double[] vector, Double adder) {
-        for(int i = 0; i < vector.length; i++){
-            vector[i] += adder;
+        Double[] arr = vector.clone();
+        for(int i = 0; i < arr.length; i++){
+            arr[i] += adder;
         }
-        return vector;
+        return arr;
     }
 
     // TODO retourne la coordonnee avec les plus grandes valeurs en X et en Y.
