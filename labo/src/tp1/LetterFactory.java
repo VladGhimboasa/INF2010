@@ -44,6 +44,7 @@ public final class LetterFactory {
 
     // TODO
     public static BaseShape create_r() {
+
         return null;
     }
 

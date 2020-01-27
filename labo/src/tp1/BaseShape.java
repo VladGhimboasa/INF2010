@@ -72,16 +72,24 @@ public class BaseShape {
 
     // TODO appliquer la rotation sur la forme.
     public BaseShape rotate(Double angle) {
-        return null;
+        BaseShape bs = new BaseShape();
+        for(Point2d points : coords){
+            bs.add(points.rotate(angle));
+        }
+        return bs;
     }
 
     // TODO appliquer la rotation sur la liste.
     public Set<Point2d> rotateAll(Double angle) {
-        return null;
+        Set<Point2d> set = new HashSet<Point2d>();
+        for(Point2d points : coords) {
+            set.add(points.rotate(angle));
+        }
+        return set;
     }
 
     // TODO retourner une nouvelle forme.
     public BaseShape clone() {
-        return new BaseShape();
+        return new BaseShape(this.coords);
     }
 }
