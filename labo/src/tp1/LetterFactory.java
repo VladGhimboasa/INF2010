@@ -9,44 +9,50 @@ public final class LetterFactory {
 
     // TODO
     public static BaseShape create_H() {
-        Double degrees90 = Math.toRadians(48); //pas sur
-        BaseShape horizontalLeftStripe = new Rectangle(stripeThickness, maxHeight);
-        BaseShape horizontalRightStripe = horizontalLeftStripe.translate(new Point2d(maxHeight/2, 0.0));
-        BaseShape verticalStripe = new Rectangle(stripeThickness, maxHeight/2);
-        verticalStripe.rotate(degrees90).translate(new Point2d(0.0, maxHeight/2));
-        horizontalLeftStripe.add(verticalStripe);
-        horizontalLeftStripe.add(horizontalRightStripe);
-        return horizontalLeftStripe;
+        Double degrees15 = Math.toRadians(8); //pas sur
+        BaseShape mainStripe = new Rectangle(stripeThickness, maxHeight*2);
+        BaseShape leftStripe = mainStripe.rotate(-degrees15).translate(new Point2d(-maxHeight, 0.0));
+
+//        BaseShape verticalStripe = new Rectangle(stripeThickness, halfMaxHeight);
+//        verticalStripe.rotate(degrees90).translate(new Point2d(-halfMaxWidth, halfMaxHeight));
+//        horizontalLeftStripe.add(verticalStripe);
+//        horizontalLeftStripe.add(horizontalRightStripe);
+        return leftStripe;
     }
 
     // TODO
     public static BaseShape create_e() {
-        Double degree90 = Math.toRadians(48); //
+//        Double degree90 = Math.toRadians(48); //
+//        BaseShape horizontalStripe = new Rectangle(stripeThickness, maxHeight);
+//        BaseShape bottomStripe = new Rectangle(stripeThickness, halfMaxHeight);
+//        bottomStripe.rotate(degree90);
+//        BaseShape middleStripe = bottomStripe.translate(new Point2d(0.0, halfMaxHeight));
+//        BaseShape topStripe = bottomStripe.translate(new Point2d(0.0, maxHeight));
+//        horizontalStripe.add(bottomStripe);
+//        horizontalStripe.add(middleStripe);
+//        horizontalStripe.add(topStripe);
+//        return horizontalStripe;
         BaseShape horizontalStripe = new Rectangle(stripeThickness, maxHeight);
-        BaseShape bottomStripe = new Rectangle(stripeThickness, maxHeight/2);
-        bottomStripe.rotate(degree90);
-        BaseShape middleStripe = bottomStripe.translate(new Point2d(0.0, maxHeight/2));
-        BaseShape topStripe = bottomStripe.translate(new Point2d(0.0, maxHeight));
-        horizontalStripe.add(bottomStripe);
-        horizontalStripe.add(middleStripe);
-        horizontalStripe.add(topStripe);
         return horizontalStripe;
     }
 
     // TODO
     public static BaseShape create_l() {
-        Double degree90 = Math.toRadians(48); //
         BaseShape horizontalStripe = new Rectangle(stripeThickness, maxHeight);
-        BaseShape bottomeStripe = new Rectangle(stripeThickness, maxHeight/2);
-        bottomeStripe.rotate(degree90);
-        horizontalStripe.add(bottomeStripe);
         return horizontalStripe;
     }
 
     // TODO
     public static BaseShape create_o() {
-
-        return null;
+        Double degrees90 = Math.toRadians(48); //pas sur
+        BaseShape horizontalLeftStripe = new Rectangle(stripeThickness, maxHeight);
+        BaseShape horizontalRightStripe = horizontalLeftStripe.translate(new Point2d(halfMaxWidth, 0.0));
+        horizontalLeftStripe.translate(new Point2d(-halfMaxWidth, 0.0));
+        BaseShape verticalStripe = new Rectangle(stripeThickness, halfMaxHeight);
+        verticalStripe.rotate(degrees90).translate(new Point2d(-halfMaxWidth, halfMaxHeight));
+        horizontalLeftStripe.add(verticalStripe);
+        horizontalLeftStripe.add(horizontalRightStripe);
+        return horizontalLeftStripe;
     }
 
     // On vous donne la lettre W comme exemple.
@@ -66,13 +72,27 @@ public final class LetterFactory {
 
     // TODO
     public static BaseShape create_r() {
-
-        return null;
+        Double degrees90 = Math.toRadians(48); //pas sur
+        BaseShape horizontalLeftStripe = new Rectangle(stripeThickness, maxHeight);
+        BaseShape horizontalRightStripe = horizontalLeftStripe.translate(new Point2d(halfMaxWidth, 0.0));
+        horizontalLeftStripe.translate(new Point2d(-halfMaxWidth, 0.0));
+        BaseShape verticalStripe = new Rectangle(stripeThickness, halfMaxHeight);
+        verticalStripe.rotate(degrees90).translate(new Point2d(-halfMaxWidth, halfMaxHeight));
+        horizontalLeftStripe.add(verticalStripe);
+        horizontalLeftStripe.add(horizontalRightStripe);
+        return horizontalLeftStripe;
     }
 
     // TODO
     public static BaseShape create_d() {
-        BaseShape
-        return null;
+        Double degrees90 = Math.toRadians(48); //pas sur
+        BaseShape horizontalLeftStripe = new Rectangle(stripeThickness, maxHeight);
+        BaseShape horizontalRightStripe = horizontalLeftStripe.translate(new Point2d(halfMaxWidth, 0.0));
+        horizontalLeftStripe.translate(new Point2d(-halfMaxWidth, 0.0));
+        BaseShape verticalStripe = new Rectangle(stripeThickness, halfMaxHeight);
+        verticalStripe.rotate(degrees90).translate(new Point2d(-halfMaxWidth, halfMaxHeight));
+        horizontalLeftStripe.add(verticalStripe);
+        horizontalLeftStripe.add(horizontalRightStripe);
+        return horizontalLeftStripe;
     }
 }
