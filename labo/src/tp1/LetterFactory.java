@@ -106,10 +106,10 @@ public final class LetterFactory {
     public static BaseShape create_d() {
        BaseShape mainCircle = new Circle(halfMaxHeight).translate(new Point2d(0.0, halfMaxWidth));
        for(int i = 0; i < halfMaxWidth / 2 + 10; i++){
-           BaseShape littleCircle = new Circle(halfMaxHeight - i).translate(new Point2d(0.0, halfMaxWidth));
+           BaseShape littleCircle = new Circle(halfMaxHeight - i).translate(new Point2d(-5.0, halfMaxWidth));
            mainCircle.add(littleCircle);
        }
-       BaseShape rightStripe = new Rectangle(stripeThickness, maxHeight).translate(new Point2d(halfMaxWidth, 0.0));
+       BaseShape rightStripe = new Rectangle(stripeThickness, maxHeight).translate(new Point2d(halfMaxWidth - 5, 0.0));
        mainCircle.add(rightStripe);
        return mainCircle;
     }
