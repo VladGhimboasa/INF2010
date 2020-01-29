@@ -7,7 +7,6 @@ public class Rectangle extends BaseShape {
     // TODO creer un rectangle avec une largeur et une longueur.
 
     public Rectangle(Double width, Double height) {
-        super();
         for(int i = 0; i< width.intValue(); i++){
             for(int y =0; y< height.intValue(); y++)
             {
@@ -18,7 +17,6 @@ public class Rectangle extends BaseShape {
 
     // TODO creer un rectangle avec un point contenant la largeur et longueur.
     public Rectangle(Point2d dimensions) {
-        super();
         this.add(dimensions);
     }
 
