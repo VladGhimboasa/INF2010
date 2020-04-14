@@ -95,12 +95,12 @@ public class Main {
 		
 		Dijkstra d = new Dijkstra(myGraph);
 		
-		d.findPath(null, null/* Spécifiez les paramètres */);
-		
-		d.showTable();
+
 
 		// Affichage le chemin le plus court :
-		System.out.println(d.printShortPath(null, null/* Spécifiez les paramètres */));
+		System.out.println(d.printShortPath(nodeA, nodeG));
+
+		d.showTable();
 	
 	}
 }

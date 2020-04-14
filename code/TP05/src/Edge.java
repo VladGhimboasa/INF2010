@@ -4,12 +4,13 @@ public class Edge {
 	private Node source;
 	private Node destination;
 	private int distance;
-	
-	public Edge () {}
-        public Edge(Node s, Node d) {
-		this.source = s;
-		this.destination = d;		
+
+	public Edge () {
+		this.source = null;
+		this.destination = null;
+		this.distance = Integer.MAX_VALUE;
 	}
+
 
 	public Edge(Node s, Node d, int dist) {
 		this.source = s;
